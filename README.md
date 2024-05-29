@@ -26,8 +26,8 @@ Here are some tips/tricks/techniques of API VAPT
 6. If the request does not accept a hashed password, then look into the source pages, we may get to know the method/code that is used for encryption and decryption, if the hashed password is encrypted then decrypt and use it -> we may get admin control.
 
 #Payment:
-1. When we try to make a payment, observe the link in the URL/request with the post-success payment link, and copy and send the URL for successful payment without paying. 
-2. Intercept the payment request and observe it, if the amount passes then change it to 0 and send it.
+1. When we try to make a payment, observe the link in the URL/request with the post-success payment link, copy, and send the URL for successful payment without paying. 
+2. Intercept the payment request and observe it, if the amount passes then change it to the minimum amount and send it.
 3. If the amount is not passed but the quantity is passed, then change the quantity of the product to 0, 0.001, or some negative values.
-4. If we have a voucher discount, observe the request while applying. Still, it is not validated properly on the server side, so we send the same request for multiple times to get multiple discounts, stop when we reach the minimum amount, and make payment.
+4. Observe the request while applying if we have a voucher discount. If it is not validated properly on the server side, we can send the same request multiple times to get multiple discounts, stop when we reach the minimum amount, and make payment.
 5. If the server side is validated with cookies, try it on the client side by applying the same voucher again and again for the same product.
